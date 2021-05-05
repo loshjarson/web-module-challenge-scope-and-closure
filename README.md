@@ -43,6 +43,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closure is when a function is created (enclosed) inside another function (the parent function). The enclosed function has the ability to reference variables created in or passed to the parent function
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,9 +67,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+There is closure in the personalDice function when a function is returned. The returned function is created inside another function and uses a variable passed to its parent function.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+The name value is always the same, as well as the "rolled a" string, but the score value changes
+
 c. What is the lexical scope of `newRoll`? 
 
+newRoll can only be used in the returned function.
 
 ### Task 3 - Stretch Goals
 
