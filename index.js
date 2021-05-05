@@ -33,7 +33,7 @@ console.log(processFirstItem(['foo', 'bar'], function (str) { return str + str }
   
   2. Which of the two uses a closure? How can you tell?
 
-  counter1 uses closure which can be seen by the variable 'count' being initialized and declared inside the function. It can also be seen when trying to console.log() the  variable 'count'
+  counter1 uses closure which can be seen by the function counter enclosed in the counterMaker function and it references a variable created inside it's parent function
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
