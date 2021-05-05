@@ -87,11 +87,11 @@ Use the finalScore function below to do the following:
 }
 */
 
-function finalScore(callback, inningsAmount) {
+function finalScore(callback, numInnings) {
   let homeScore = 0
   let awayScore = 0
 
-  for (let i = 0; i < inningsAmount; i++) {
+  for (let i = 0; i < numInnings; i++) {
     homeScore += callback();
     awayScore += callback();
     console.log(`Home: ${homeScore}, \nAway: ${awayScore}`)
@@ -109,9 +109,10 @@ Use the getInningScore() function below to do the following:
 
 function getInningScore(callback) {
   const score = {
-    Home: callback
+    Home: callback(),
+    Away: callback()
   };
-
+  return score
 }
 
 
@@ -156,8 +157,17 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inningScoreCallback, inningCallback, numInnings) {
+  let homeScore = 0;
+  let awayScore = 0;
+  let endScore = [];
+
+  for (let i = 0; i < numInnings; i++) {
+    homeScore += inningScoreCallback(inningCallback).Home;
+    awayScore += inningScoreCallback(inningCallback).Away;
+    endScore.push(`Inning ${i + 1}: Away ${awayScore} - Home ${homeScore}`)
+  }
+  return endScore;
 }
 
 
